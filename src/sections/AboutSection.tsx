@@ -103,6 +103,7 @@ const AboutSection = () => {
             {/* The Reveal Mask (Overlay) */}
             <motion.div
               className="absolute inset-0 bg-background z-10"
+              style={{ originX: 0, willChange: "transform" }}
               variants={{
                 hidden: { x: "0%" },
                 visible: {
@@ -114,7 +115,6 @@ const AboutSection = () => {
                   },
                 },
               }}
-              style={{ originX: 0 }}
             />
           </motion.div>
         </div>

@@ -12,16 +12,19 @@ const CATEGORIES = [
     label: "Frontend",
     items: ["REACT", "NEXT.JS", "VUE", "REACT NATIVE", "VITE"],
     direction: "left",
+    transparent: false,
   },
   {
     label: "Backend & Database",
     items: ["GO", "PYTHON", "SQL", "MARIADB"],
     direction: "right",
+    transparent: true,
   },
   {
     label: "Tools & DevOps",
     items: ["C", "C++", "DOCKER", "GITHUB", "LINUX", "N8N"],
     direction: "left",
+    transparent: false,
   },
 ] as const;
 
@@ -29,14 +32,59 @@ const CATEGORIES = [
 // SUB-COMPONENTS
 // ----------------------------------------------------------------------
 
+const TechItem = ({
+  text,
+  transparent,
+}: {
+  text: string;
+  transparent: boolean;
+}) => {
+  if (!transparent) {
+    // Solid items just stay solid, no fancy interactions needed unless requested
+    // Current design: just solid white
+    return (
+      <span className="text-6xl md:text-8xl font-syne font-bold uppercase cursor-default text-[#E7E7E7]">
+        {text}
+      </span>
+    );
+  }
+
+  // Transparent items (Outline -> Solid)
+  return (
+    <motion.span
+      className="text-6xl md:text-8xl font-syne font-bold uppercase cursor-default text-transparent"
+      style={{
+        WebkitTextStroke: "1px #E7E7E7",
+      }}
+      initial="outline"
+      // whileHover="solid" removed to keep it always transparent
+      variants={{
+        outline: {
+          color: "transparent",
+          WebkitTextStroke: "1px #E7E7E7",
+        } as any,
+        solid: {
+          color: "#E7E7E7",
+          WebkitTextStroke: "0px transparent", // Optional: remove stroke or keep it
+        } as any,
+      }}
+      transition={{ duration: 0.3 }}
+    >
+      {text}
+    </motion.span>
+  );
+};
+
 const MarqueeRow = ({
   items,
   direction = "left",
   speed = 20,
+  transparent = false,
 }: {
   items: readonly string[];
   direction?: "left" | "right";
   speed?: number;
+  transparent?: boolean;
 }) => {
   // Duplicate items enough times to ensure smooth looping without gaps
   // 10x duplication to be safe for smaller lists on large screens
@@ -51,24 +99,7 @@ const MarqueeRow = ({
         transition={{ duration: speed, repeat: Infinity, ease: "linear" }}
       >
         {duplicatedItems.map((item, index) => (
-          <span
-            key={index}
-            className="text-6xl md:text-8xl font-syne font-bold uppercase transition-all duration-300 cursor-default"
-            style={{
-              WebkitTextStroke: "1px #E7E7E7",
-              color: "transparent",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = "#E7E7E7";
-              e.currentTarget.style.opacity = "1";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = "transparent";
-              e.currentTarget.style.opacity = "1"; // Keep opacity 1, just change fill
-            }}
-          >
-            {item}
-          </span>
+          <TechItem key={index} text={item} transparent={transparent} />
         ))}
       </motion.div>
     </div>
@@ -89,6 +120,7 @@ export function TechStack() {
         <TypewriterText
           text="SKILLS"
           className="text-4xl md:text-6xl font-syne font-bold text-[#E7E7E7] flex justify-center items-center"
+          replay={true}
         />
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -115,6 +147,7 @@ export function TechStack() {
               items={cat.items}
               direction={cat.direction as "left" | "right"}
               speed={80}
+              transparent={cat.transparent}
             />
           </div>
         ))}

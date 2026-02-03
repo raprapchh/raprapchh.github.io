@@ -1,50 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
-import { Github, Linkedin, Mail, Download } from "lucide-react";
+import { Mail, Github, Linkedin, Download } from "lucide-react";
 import Link from "next/link";
-
-const MagneticButton = ({
-  children,
-  href,
-}: {
-  children: React.ReactNode;
-  href: string;
-}) => {
-  const ref = useRef<HTMLAnchorElement>(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    const { clientX, clientY } = e;
-    const { width, height, left, top } = ref.current!.getBoundingClientRect();
-    const x = clientX - (left + width / 2);
-    const y = clientY - (top + height / 2);
-    setPosition({ x: x * 0.2, y: y * 0.2 });
-  };
-
-  const handleMouseLeave = () => {
-    setPosition({ x: 0, y: 0 });
-  };
-
-  const { x, y } = position;
-
-  return (
-    <motion.a
-      ref={ref}
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      animate={{ x, y }}
-      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-      className="relative flex items-center justify-center w-20 h-20 md:w-32 md:h-32 rounded-full border border-foreground/20 hover:bg-foreground hover:text-background transition-colors duration-300"
-    >
-      {children}
-    </motion.a>
-  );
-};
+import MagneticSocialLink from "@/components/MagneticSocialLink";
 
 export function Footer() {
   return (
@@ -60,24 +19,24 @@ export function Footer() {
         <Link
           href="/assets/CV_Raphael_Chanliongco_Fulltime.pdf"
           target="_blank"
-          className="group flex items-center gap-2 px-8 py-3 mb-16 border border-[#E7E7E7] hover:bg-[#E7E7E7] hover:text-[#151410] transition-all duration-300 rounded-sm"
+          className="group flex items-center gap-2 px-6 py-2 md:px-8 md:py-3 mb-12 md:mb-16 border border-[#E7E7E7] hover:bg-[#E7E7E7] hover:text-[#151410] transition-all duration-300 rounded-sm"
         >
-          <span className="text-base font-space uppercase tracking-widest">
+          <span className="text-sm md:text-base font-space uppercase tracking-widest">
             Resume
           </span>
-          <Download className="w-5 h-5" />
+          <Download className="w-4 h-4 md:w-5 md:h-5" />
         </Link>
 
-        <div className="flex gap-8">
-          <MagneticButton href="mailto:raphael.chanliongco@epitech.eu">
-            <Mail size={32} />
-          </MagneticButton>
-          <MagneticButton href="https://github.com/raprapchh">
-            <Github size={32} />
-          </MagneticButton>
-          <MagneticButton href="https://www.linkedin.com/in/raphael-chanliongco">
-            <Linkedin size={32} />
-          </MagneticButton>
+        <div className="flex gap-4 md:gap-8">
+          <MagneticSocialLink href="mailto:raphael.chanliongco@epitech.eu">
+            <Mail className="w-5 h-5 md:w-8 md:h-8" />
+          </MagneticSocialLink>
+          <MagneticSocialLink href="https://github.com/raprapchh">
+            <Github className="w-5 h-5 md:w-8 md:h-8" />
+          </MagneticSocialLink>
+          <MagneticSocialLink href="https://www.linkedin.com/in/raphael-chanliongco">
+            <Linkedin className="w-5 h-5 md:w-8 md:h-8" />
+          </MagneticSocialLink>
         </div>
       </div>
 

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { TypewriterText } from "@/components/ui/typewriter-text";
 import { ArrowUpRight } from "lucide-react";
 
 interface Project {
@@ -23,7 +24,7 @@ const projects: Project[] = [
     description:
       "UI/UX Optimization and ergonomic redesign. Enhanced user interface performance and accessibility.",
     stack: "React, Front-end optimization",
-    color: "#ff4d4d",
+    color: "#F3D673",
   },
   {
     id: 2,
@@ -33,7 +34,7 @@ const projects: Project[] = [
     description:
       "Local embedded AI, Real-time translation. Facilitating passenger/crew communication on board.",
     stack: "AI, Real-time Translation",
-    color: "#4d79ff",
+    color: "#F3D673",
   },
   {
     id: 3,
@@ -43,7 +44,7 @@ const projects: Project[] = [
     description:
       "Development of an awareness chatbot focusing on the environmental impact of LLMs.",
     stack: "LLM, Eco-tech",
-    color: "#4eff4d",
+    color: "#F3D673",
   },
   {
     id: 4,
@@ -53,7 +54,7 @@ const projects: Project[] = [
     description:
       "Design and development of 'private.phocus' and 'option.retraite' platforms. End-to-end feature implementation.",
     stack: "React, Fullstack Architecture",
-    color: "#ff6b4d",
+    color: "#F3D673",
   },
 ];
 
@@ -61,11 +62,13 @@ export function WorkList() {
   const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
 
   return (
-    <section className="min-h-screen w-full py-24 px-4 bg-background relative z-10">
+    <section className="min-h-screen w-full py-24 px-4 bg-background relative z-10 overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-syne font-bold mb-16 uppercase opacity-50">
-          Selected Works
-        </h2>
+        <TypewriterText
+          text="Selected Works"
+          className="text-4xl md:text-6xl font-syne font-bold mb-16 uppercase text-[#E7E7E7]"
+          replay={true}
+        />
 
         <div className="flex flex-col">
           {projects.map((project) => (
@@ -74,8 +77,15 @@ export function WorkList() {
               className="group relative border-t border-foreground/10 py-12 cursor-pointer transition-colors hover:bg-foreground/5 px-4"
               onMouseEnter={() => setHoveredProject(project)}
               onMouseLeave={() => setHoveredProject(null)}
+              onClick={() =>
+                setHoveredProject(
+                  hoveredProject?.id === project.id ? null : project,
+                )
+              }
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.02, x: 20 }}
+              transition={{ duration: 0.3 }}
               viewport={{ once: false }}
             >
               <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 z-10 relative">
@@ -107,7 +117,7 @@ export function WorkList() {
       <AnimatePresence>
         {hoveredProject && (
           <motion.div
-            className="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 bg-gradient-to-br from-transparent to-black/80 flex items-center justify-center opacity-20"
+            className="fixed top-0 left-0 w-full h-full pointer-events-none z-0 bg-gradient-to-br from-transparent to-black/80 flex items-center justify-center opacity-40 mix-blend-screen"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -115,8 +125,12 @@ export function WorkList() {
             {/* Abstract large floaty shape */}
             <motion.div
               layoutId="reveal-shape"
-              className="w-[40vw] h-[40vw] rounded-full blur-[100px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-              style={{ backgroundColor: hoveredProject.color, opacity: 0.2 }}
+              className="w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] rounded-full blur-[80px] md:blur-[100px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              style={{
+                backgroundColor: hoveredProject.color,
+                opacity: 0.2,
+                willChange: "transform",
+              }}
             />
           </motion.div>
         )}

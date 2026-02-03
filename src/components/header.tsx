@@ -1,13 +1,14 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Download, ArrowRight } from "lucide-react";
+import { Download, ArrowRight, Menu, X } from "lucide-react";
 import { TypewriterText } from "@/components/ui/typewriter-text";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,14 +29,14 @@ export function Header() {
           : "py-8 bg-transparent"
       }`}
     >
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-between items-center">
+      <div className="w-full px-6 md:px-12 flex justify-between items-center relative">
         <Link href="/" className="group flex flex-col">
           <span className="text-2xl font-syne font-bold tracking-tighter uppercase leading-none">
-            RC.
+            Raphaël Chanliongco
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-12">
+        <nav className="hidden md:flex items-center gap-12 absolute left-1/2 -translate-x-1/2">
           {["About", "Works", "Skills", "Contact"].map((item, index) => (
             <motion.div
               key={item}
@@ -59,7 +60,42 @@ export function Header() {
         </nav>
 
         {/* Mobile menu could be added here, but keeping it super minimal for now */}
-        <div className="flex items-center gap-6"></div>
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden relative z-50 text-foreground"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+        {/* Mobile Nav Overlay */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="fixed inset-0 bg-background z-40 flex flex-col items-center justify-center gap-8 md:hidden"
+            >
+              {["About", "Works", "Skills", "Contact"].map((item, index) => (
+                <motion.div
+                  key={item}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + index * 0.1 }}
+                >
+                  <Link
+                    href={`#${item.toLowerCase()}`}
+                    className="text-4xl font-syne font-bold uppercase text-foreground hover:text-amber-6 transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item}
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.header>
   );
