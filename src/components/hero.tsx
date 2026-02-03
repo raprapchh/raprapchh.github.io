@@ -18,8 +18,24 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="h-screen w-full flex flex-col justify-center items-center relative overflow-hidden px-4"
+      className="h-screen w-full flex flex-col justify-center items-center relative overflow-hidden px-4 bg-[#151410]"
     >
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover grayscale opacity-60 mix-blend-screen"
+        >
+          <source
+            src="https://anthracitestudio.be/wp-content/themes/Anthracite%20studio/dist/videos/background.webm"
+            type="video/webm"
+          />
+        </video>
+        <div className="absolute inset-0 bg-[#151410] opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#151410]/50 to-[#151410]" />
+      </div>
       <div className="z-10 flex flex-col items-center">
         <motion.h1
           style={{ y: y1 }}
