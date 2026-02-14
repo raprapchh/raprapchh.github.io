@@ -129,7 +129,7 @@ export function TechStack() {
           viewport={{ once: false }}
           className="mt-4 font-space text-[#E7E7E7]/60 text-sm md:text-base tracking-widest uppercase"
         >
-          Technologies I work with daily
+          Technologies I work with.
         </motion.p>
       </div>
 

@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, Download } from "lucide-react";
 import Link from "next/link";
 import MagneticSocialLink from "@/components/MagneticSocialLink";
+import { BackToTop } from "@/components/back-to-top";
 
 export function Footer() {
   return (
     <footer
       id="contact"
-      className="min-h-screen w-full flex flex-col justify-center items-center bg-background px-4 py-24 relative z-10 border-t border-accent"
+      className="min-h-[80vh] w-full flex flex-col justify-center items-center bg-background px-4 py-20 relative z-10 border-t border-accent"
     >
       <div className="flex flex-col items-center text-center">
         <h2 className="text-[10.8vw] font-syne font-bold leading-[0.8] tracking-tighter uppercase mb-16">
@@ -40,8 +41,14 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-0 w-full text-center opacity-30 font-space text-xs">
-        © 2026 Raphaël Chanliongco.
+      <div className="absolute bottom-4 md:bottom-8 left-0 w-full flex justify-center items-center pointer-events-none">
+        <div className="opacity-30 font-space text-[10px] md:text-xs">
+          © 2026 Raphaël Chanliongco.
+        </div>
+      </div>
+
+      <div className="absolute bottom-4 md:bottom-8 right-4 md:right-8 z-20">
+        <BackToTop />
       </div>
     </footer>
   );
