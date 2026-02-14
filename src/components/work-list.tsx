@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TypewriterText } from "@/components/ui/typewriter-text";
-import { ArrowUpRight } from "lucide-react";
 
 interface Project {
   id: number;
@@ -65,7 +64,7 @@ export function WorkList() {
     <section className="min-h-screen w-full py-24 px-4 bg-background relative z-10 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <TypewriterText
-          text="Selected Works"
+          text="Worked With"
           className="text-4xl md:text-6xl font-syne font-bold mb-16 uppercase text-[#E7E7E7]"
           replay={true}
         />
@@ -74,14 +73,9 @@ export function WorkList() {
           {projects.map((project) => (
             <motion.div
               key={project.id}
-              className="group relative border-t border-foreground/10 py-12 cursor-pointer transition-colors hover:bg-foreground/5 px-4"
+              className="group relative border-t border-foreground/10 py-12 transition-colors hover:bg-foreground/5 px-4"
               onMouseEnter={() => setHoveredProject(project)}
               onMouseLeave={() => setHoveredProject(null)}
-              onClick={() =>
-                setHoveredProject(
-                  hoveredProject?.id === project.id ? null : project,
-                )
-              }
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ scale: 1.02, x: 20 }}
@@ -105,8 +99,6 @@ export function WorkList() {
                   {project.date}
                 </span>
               </div>
-
-              <ArrowUpRight className="absolute top-8 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-2 group-hover:-translate-y-2 text-amber-6" />
             </motion.div>
           ))}
           <div className="border-t border-foreground/10"></div>
