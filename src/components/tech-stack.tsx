@@ -116,10 +116,10 @@ export function TechStack() {
       id="skills"
       className="py-24 w-full overflow-hidden bg-[#151410] relative z-10 flex flex-col gap-16"
     >
-      <div className="container mx-auto px-4 text-center">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
         <TypewriterText
           text="SKILLS"
-          className="text-4xl md:text-6xl font-syne font-bold text-[#E7E7E7] flex justify-center items-center"
+          className="text-4xl md:text-5xl lg:text-6xl font-syne font-bold text-[#E7E7E7] flex justify-center items-center"
           replay={true}
         />
         <motion.p
@@ -137,7 +137,7 @@ export function TechStack() {
         {CATEGORIES.map((cat, index) => (
           <div key={index} className="flex flex-col gap-4">
             {/* Small Label above the marquee */}
-            <div className="container mx-auto px-6 md:px-24">
+            <div className="max-w-7xl mx-auto w-full px-8 md:px-16 lg:px-24">
               <span className="text-[#E7E7E7] font-space text-sm tracking-widest opacity-60 uppercase border-b border-[#E7E7E7]/20 pb-1">
                 {cat.label}
               </span>

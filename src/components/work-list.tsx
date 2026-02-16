@@ -61,11 +61,11 @@ export function WorkList() {
   const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
 
   return (
-    <section className="min-h-screen w-full py-24 px-4 bg-background relative z-10 overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+    <section className="min-h-screen w-full py-24 px-6 md:px-12 bg-background relative z-10 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
         <TypewriterText
           text="Worked With"
-          className="text-4xl md:text-6xl font-syne font-bold mb-16 uppercase text-[#E7E7E7]"
+          className="text-4xl md:text-5xl lg:text-6xl font-syne font-bold mb-16 uppercase text-[#E7E7E7]"
           replay={true}
         />
 
@@ -82,20 +82,20 @@ export function WorkList() {
               transition={{ duration: 0.3 }}
               viewport={{ once: false }}
             >
-              <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 z-10 relative">
-                <h3 className="text-3xl md:text-5xl font-unbounded font-bold text-foreground group-hover:text-amber-6 transition-colors">
+              <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 z-10 relative">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-unbounded font-bold text-foreground group-hover:text-amber-6 transition-colors leading-tight">
                   {project.title}
                 </h3>
-                <span className="font-space font-light text-sm md:text-base opacity-60 group-hover:opacity-100 transition-opacity">
+                <span className="font-space font-light text-xs sm:text-sm md:text-base opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0 lg:text-right mb-1">
                   {project.role}
                 </span>
               </div>
 
-              <div className="flex flex-col md:flex-row justify-between mt-4 opacity-40 group-hover:opacity-80 transition-opacity">
-                <p className="font-space text-sm max-w-md">
+              <div className="flex flex-col lg:flex-row lg:items-end justify-between mt-6 lg:mt-4 opacity-40 group-hover:opacity-80 transition-opacity gap-4">
+                <p className="font-space text-sm max-w-2xl leading-relaxed">
                   {project.description}
                 </p>
-                <span className="font-space text-xs mt-2 md:mt-0">
+                <span className="font-space text-xs mt-2 lg:mt-0 flex-shrink-0 mb-1">
                   {project.date}
                 </span>
               </div>

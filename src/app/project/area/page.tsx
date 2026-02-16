@@ -85,7 +85,7 @@ export default function AreaProjectPage() {
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="font-syne text-[18vw] md:text-[14vw] font-black leading-[0.85] tracking-tighter z-10 text-center whitespace-nowrap"
+          className="font-syne text-7xl sm:text-8xl md:text-[14vw] font-black leading-[0.85] tracking-tighter z-10 text-center"
         >
           {title.split("").map((char, i) => (
             <motion.span

@@ -34,18 +34,18 @@ export function Header() {
       className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ${
         isScrolled
           ? "py-4 bg-background/80 backdrop-blur-md border-b border-white/5"
-          : "py-8 bg-transparent"
+          : "py-6 md:py-8 bg-transparent"
       }`}
     >
       <div className="w-full px-6 md:px-12 flex justify-between items-center relative z-[100]">
-        <Link href="/" className="group flex flex-col">
-          <span className="text-2xl font-syne font-bold tracking-tighter uppercase leading-none">
+        <Link href="/" className="group flex flex-col flex-shrink-0">
+          <span className="text-lg md:text-xl xl:text-2xl font-syne font-bold tracking-tighter uppercase leading-none">
             Raphaël Chanliongco
           </span>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-12 absolute left-1/2 -translate-x-1/2">
+        {/* Desktop Nav - Only from XL breakpoint to prevent overlap with the long name */}
+        <nav className="hidden xl:flex items-center gap-8 2xl:gap-12">
           {["About", "Works", "Skills", "Contact"].map((item, index) => (
             <motion.div
               key={item}
@@ -59,7 +59,7 @@ export function Header() {
             >
               <Link
                 href={`#${item.toLowerCase()}`}
-                className="relative text-sm font-space uppercase tracking-widest text-foreground/60 hover:text-foreground transition-colors group"
+                className="relative text-xs font-space uppercase tracking-widest text-foreground/60 hover:text-foreground transition-colors group"
               >
                 {item}
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-amber-6 transition-all duration-300 group-hover:w-full" />
@@ -68,9 +68,9 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Visible up to XL breakpoint */}
         <button
-          className="md:hidden relative text-foreground p-2"
+          className="xl:hidden relative text-foreground p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
@@ -85,7 +85,7 @@ export function Header() {
             animate={{ opacity: 1, y: "0%" }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 w-screen h-screen bg-[#151410] z-[90] flex flex-col items-center justify-center gap-10 md:hidden"
+            className="fixed inset-0 w-screen h-screen bg-[#151410] z-[90] flex flex-col items-center justify-center gap-10 xl:hidden"
           >
             {["About", "Works", "Skills", "Contact"].map((item, index) => (
               <motion.div

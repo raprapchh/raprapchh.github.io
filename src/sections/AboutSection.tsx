@@ -75,39 +75,39 @@ const AboutSection = () => {
       className="w-full py-20 md:py-32 relative overflow-hidden"
       style={{ backgroundColor: "#151410", color: "#E7E7E7" }}
     >
-      <div className="w-full origin-center scale-90">
+      <div className="w-full">
         {/* Section Label */}
-        <div className="container mx-auto px-4 md:px-8 mb-12">
+        <div className="container mx-auto px-6 md:px-12 mb-12">
           <TypewriterText
             text="About me"
-            className="text-4xl md:text-6xl font-syne font-bold uppercase text-[#E7E7E7]"
+            className="text-4xl md:text-5xl lg:text-6xl font-syne font-bold uppercase text-[#E7E7E7]"
             replay={true}
           />
         </div>
 
         {/* ─── The Bento Grid ─── */}
         <motion.div
-          className="container mx-auto px-4 md:px-8"
+          className="container mx-auto px-6 md:px-12"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
           <div className="grid grid-cols-12 gap-[1px] bg-white/10 border border-white/10 relative">
             {/* ═══════════════════════════════════════════════════════
-              BLOCK 1 — THE PORTRAIT (4 cols / full row height)
+              BLOCK 1 — THE PORTRAIT
               ═══════════════════════════════════════════════════════ */}
             <motion.div
-              className="col-span-12 md:col-span-4 md:row-span-2 relative group overflow-hidden bg-[#151410]"
-              style={{ minHeight: "400px" }}
+              className="col-span-12 xl:col-span-4 xl:row-span-2 relative group overflow-hidden bg-[#151410]"
+              style={{ minHeight: "450px" }}
               variants={blockVariants}
             >
-              <div className="relative w-full h-full min-h-[400px] md:min-h-full">
+              <div className="relative w-full h-full min-h-[450px] xl:min-h-full">
                 <Image
                   src="/assets/Photo.png"
                   alt="Raphaël — Portrait"
                   fill
                   className="object-cover object-top transition-all duration-700 ease-out group-hover:scale-[1.03]"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 33vw"
                   priority
                 />
                 {/* Subtle overlay gradient */}
@@ -116,10 +116,10 @@ const AboutSection = () => {
             </motion.div>
 
             {/* ═══════════════════════════════════════════════════════
-              BLOCK 2 — THE MANIFESTO (8 cols, top row)
+              BLOCK 2 — THE MANIFESTO
               ═══════════════════════════════════════════════════════ */}
             <motion.div
-              className="col-span-12 md:col-span-8 p-8 md:p-12 lg:p-16 flex flex-col justify-center bg-[#151410]"
+              className="col-span-12 xl:col-span-8 p-8 md:p-12 xl:p-16 flex flex-col justify-center bg-[#151410]"
               variants={blockVariants}
             >
               {/* Tiny label */}
@@ -135,7 +135,7 @@ const AboutSection = () => {
               </h2>
 
               {/* Refined Paragraph */}
-              <p className="text-sm sm:text-base md:text-lg font-space text-[#E7E7E7]/60 leading-relaxed max-w-xl">
+              <p className="text-sm sm:text-base md:text-lg font-space text-[#E7E7E7]/60 leading-relaxed max-w-2xl">
                 I find satisfaction in a job well done. Whether it&apos;s
                 backend logic or frontend details, I am committed to delivering
                 clean, reliable, and high-quality code every single time.
@@ -143,10 +143,10 @@ const AboutSection = () => {
             </motion.div>
 
             {/* ═══════════════════════════════════════════════════════
-              BLOCK 3 — THE SPECS DATA (4 cols, bottom row left)
+              BLOCK 3 — THE SPECS DATA
               ═══════════════════════════════════════════════════════ */}
             <motion.div
-              className="col-span-12 md:col-span-4 p-8 md:p-10 flex flex-col justify-center bg-[#151410]"
+              className="col-span-12 md:col-span-6 xl:col-span-4 p-8 md:p-10 flex flex-col justify-center bg-[#151410]"
               variants={blockVariants}
             >
               {/* Tiny label */}
@@ -167,10 +167,10 @@ const AboutSection = () => {
             </motion.div>
 
             {/* ═══════════════════════════════════════════════════════
-              BLOCK 4 — THE SIGNATURE (4 cols, bottom row right)
+              BLOCK 4 — THE SIGNATURE
               ═══════════════════════════════════════════════════════ */}
             <motion.div
-              className="col-span-12 md:col-span-4 p-8 md:p-10 flex flex-col justify-between bg-[#151410]"
+              className="col-span-12 md:col-span-6 xl:col-span-4 p-6 md:p-10 flex flex-col justify-between bg-[#151410]"
               variants={blockVariants}
             >
               {/* Tiny label */}
@@ -180,7 +180,7 @@ const AboutSection = () => {
 
               {/* Quote */}
               <div className="flex-1 flex flex-col justify-center">
-                <blockquote className="font-syne text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-[#E7E7E7]/70 italic sm:whitespace-nowrap">
+                <blockquote className="font-syne text-xl sm:text-2xl md:text-3xl xl:text-4xl font-bold leading-tight text-[#E7E7E7]/70 italic xl:whitespace-nowrap">
                   &ldquo;Quality in{" "}
                   <span style={{ color: "#6C9CFC" }}>every line</span>.&rdquo;
                 </blockquote>

@@ -37,12 +37,12 @@ const scaleIn = {
 
 export function FeaturedProject() {
   return (
-    <section className="relative w-full py-16 md:py-24 px-4 md:px-8 overflow-hidden">
+    <section className="relative w-full py-16 md:py-24 px-6 md:px-12 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* ── Section Title ── */}
         <TypewriterText
           text="Selected Work"
-          className="text-4xl md:text-6xl font-syne font-bold mb-16 uppercase text-[#E7E7E7]"
+          className="text-4xl md:text-5xl lg:text-6xl font-syne font-bold mb-16 uppercase text-[#E7E7E7]"
           replay={true}
         />
 
@@ -56,7 +56,7 @@ export function FeaturedProject() {
           <Link href="/project/area" className="group block">
             <motion.div
               variants={scaleIn}
-              className="relative w-full aspect-[16/9] md:aspect-[2.2/1] rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer"
+              className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[2.2/1] rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer"
             >
               {/* Ambient glow behind the card */}
               <div className="absolute -inset-8 -z-10 blur-[100px] bg-[#3b82f6]/[0.06] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -75,7 +75,7 @@ export function FeaturedProject() {
               />
 
               {/* ── Project Info (Left) ── */}
-              <div className="absolute inset-0 z-10 flex flex-col justify-between p-6 md:p-12 lg:p-16">
+              <div className="absolute inset-0 z-10 flex flex-col justify-between p-8 md:p-12 lg:p-16">
                 <div>
                   <motion.span
                     variants={fadeUp}
@@ -86,14 +86,14 @@ export function FeaturedProject() {
 
                   <motion.h3
                     variants={fadeUp}
-                    className="font-syne text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-[#E7E7E7] leading-[0.9]"
+                    className="font-syne text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter text-[#E7E7E7] leading-[0.9]"
                   >
                     AREA
                   </motion.h3>
 
                   <motion.p
                     variants={fadeUp}
-                    className="mt-3 md:mt-4 text-sm md:text-base font-space opacity-50 max-w-md leading-relaxed"
+                    className="mt-3 md:mt-4 text-sm md:text-base font-space opacity-50 max-w-sm leading-relaxed"
                   >
                     Action-Reaction Automation Platform — React Native, Go,
                     Docker, PostgreSQL
@@ -111,14 +111,14 @@ export function FeaturedProject() {
                     className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
                   />
                   {/* Animated underline */}
-                  <span className="absolute bottom-6 md:bottom-12 lg:bottom-16 left-6 md:left-12 lg:left-16 w-20 h-px bg-[#E7E7E7] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out" />
+                  <span className="absolute bottom-8 md:bottom-12 lg:bottom-16 left-8 md:left-12 lg:left-16 w-20 h-px bg-[#E7E7E7] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out" />
                 </motion.div>
               </div>
 
               {/* ── Mobile Mockup (Right) ── */}
               <motion.div
                 variants={fadeUp}
-                className="absolute right-4 md:right-12 lg:right-20 bottom-0 w-[35%] md:w-[28%] lg:w-[22%] z-10"
+                className="absolute right-4 md:right-8 lg:right-20 bottom-0 w-[40%] md:w-[32%] lg:w-[22%] z-10"
               >
                 <motion.div
                   whileHover={{ y: -12, rotate: -1 }}
@@ -140,7 +140,7 @@ export function FeaturedProject() {
               {/* ── Web Mockup (Background, centered right) ── */}
               <motion.div
                 variants={scaleIn}
-                className="absolute right-[15%] top-1/2 -translate-y-1/2 w-[50%] md:w-[45%] lg:w-[40%] opacity-30 group-hover:opacity-40 transition-opacity duration-700 z-0"
+                className="absolute right-[10%] md:right-[15%] top-1/2 -translate-y-1/2 w-[60%] md:w-[50%] lg:w-[40%] opacity-20 md:opacity-30 group-hover:opacity-40 transition-opacity duration-700 z-0"
               >
                 <Image
                   src="/assets/mockup_area_web.png"
