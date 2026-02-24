@@ -95,7 +95,7 @@ export function FeaturedProject() {
                     variants={fadeUp}
                     className="mt-3 md:mt-4 text-sm md:text-base font-space opacity-50 max-w-sm leading-relaxed"
                   >
-                    Action-Reaction Automation Platform — React Native, Go,
+                    Action-Reaction Automation Platform — React, React Native, Go,
                     Docker, PostgreSQL
                   </motion.p>
                 </div>

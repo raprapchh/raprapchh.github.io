@@ -10,10 +10,10 @@ export function Footer() {
   return (
     <footer
       id="contact"
-      className="min-h-[80vh] w-full flex flex-col justify-center items-center bg-background px-4 py-20 relative z-10 border-t border-accent"
+      className="min-h-screen w-full flex flex-col justify-center items-center bg-background px-4 pt-32 pb-20 relative z-10 border-t border-accent"
     >
       <div className="flex flex-col items-center text-center">
-        <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-[10.8vw] font-syne font-bold leading-[0.8] tracking-tighter uppercase mb-16">
+        <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-[10.8vw] font-syne font-bold leading-[0.9] tracking-tighter uppercase mb-16">
           Let's Work <br /> Together
         </h2>
 
