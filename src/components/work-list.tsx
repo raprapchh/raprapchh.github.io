@@ -19,7 +19,7 @@ const projects: Project[] = [
     id: 1,
     title: "EOR Consultants",
     role: "Frontend Developer",
-    date: "Oct 2025 - Present",
+    date: "Oct 2025 - Feb 2026",
     description:
       "UI/UX Optimization and ergonomic redesign. Enhanced user interface performance and accessibility.",
     stack: "React, Front-end optimization",
@@ -27,22 +27,22 @@ const projects: Project[] = [
   },
   {
     id: 2,
+    title: "Hackathon Epitech x Onepoint",
+    role: "Eco-tech Challenge",
+    date: "Apr 2025",
+    description:
+      "Development of an awareness chatbot focusing on the environmental impact of LLMs.",
+    stack: "LLM, Eco-tech",
+    color: "#F3D673",
+  },
+  {
+    id: 3,
     title: "Hackathon Vueling",
     role: "Finalist - 'We speak your language'",
     date: "Mar 2025",
     description:
       "Local embedded AI, Real-time translation. Facilitating passenger/crew communication on board.",
     stack: "AI, Real-time Translation",
-    color: "#F3D673",
-  },
-  {
-    id: 3,
-    title: "Hackathon Epitech x Onepoint",
-    role: "Eco-tech Challenge",
-    date: "Feb 2025",
-    description:
-      "Development of an awareness chatbot focusing on the environmental impact of LLMs.",
-    stack: "LLM, Eco-tech",
     color: "#F3D673",
   },
   {

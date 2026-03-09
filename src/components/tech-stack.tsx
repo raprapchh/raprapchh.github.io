@@ -16,13 +16,13 @@ const CATEGORIES = [
   },
   {
     label: "Backend & Database",
-    items: ["GO", "PYTHON", "SQL", "MARIADB"],
+    items: ["GO", "PYTHON", "POSTGRESQL", "MARIADB"],
     direction: "right",
     transparent: true,
   },
   {
     label: "Tools & DevOps",
-    items: ["C", "C++", "DOCKER", "GITHUB", "LINUX", "N8N"],
+    items: ["C", "C++", "DOCKER", "GITHUB", "LINUX", "N8N", "GIT", "GEMINI", "ANTIGRAVITY"],
     direction: "left",
     transparent: false,
   },
