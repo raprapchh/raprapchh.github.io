@@ -16,6 +16,16 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 5,
+    title: "Phocus1",
+    role: "Fullstack Developer",
+    date: "Mar 2026 - Present",
+    description:
+      "Designing and developing two digital platforms for the internal team and working on AI workflows.",
+    stack: "Fullstack, n8n",
+    color: "#F3D673",
+  },
+  {
     id: 1,
     title: "EOR Consultants",
     role: "Frontend Developer",
