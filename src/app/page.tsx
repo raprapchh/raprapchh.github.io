@@ -22,12 +22,12 @@ export default function Home() {
       </div>
 
       {/* ─── 3. SELECTED WORK (Visual Project Showcase) ─── */}
-      <section id="selected-work">
+      <section id="work">
         <FeaturedProject />
       </section>
 
-      {/* ─── 4. WORKED WITH (Experience / Trust List) ─── */}
-      <div id="works" className="mt-8 md:mt-16">
+      {/* ─── 4. EXPERIENCE (Card Grid) ─── */}
+      <div id="experience">
         <WorkList />
       </div>
 

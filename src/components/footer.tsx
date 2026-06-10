@@ -29,13 +29,22 @@ export function Footer() {
         </Link>
 
         <div className="flex gap-4 md:gap-8">
-          <MagneticSocialLink href="mailto:raphael.chanliongco@epitech.eu">
+          <MagneticSocialLink
+            href="mailto:raphael.chanliongco@epitech.eu"
+            label="Send an email"
+          >
             <Mail className="w-5 h-5 md:w-8 md:h-8" />
           </MagneticSocialLink>
-          <MagneticSocialLink href="https://github.com/raprapchh">
+          <MagneticSocialLink
+            href="https://github.com/raprapchh"
+            label="GitHub profile"
+          >
             <Github className="w-5 h-5 md:w-8 md:h-8" />
           </MagneticSocialLink>
-          <MagneticSocialLink href="https://www.linkedin.com/in/raphael-chanliongco">
+          <MagneticSocialLink
+            href="https://www.linkedin.com/in/raphael-chanliongco"
+            label="LinkedIn profile"
+          >
             <Linkedin className="w-5 h-5 md:w-8 md:h-8" />
           </MagneticSocialLink>
         </div>

@@ -6,6 +6,14 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { TypewriterText } from "@/components/ui/typewriter-text";
 
+const NAV_ITEMS = [
+  { label: "About", href: "#about" },
+  { label: "Work", href: "#work" },
+  { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
+];
+
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -30,7 +38,7 @@ export function Header() {
     <motion.header
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 2.5 }}
+      transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 2.0 }}
       className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ${
         isScrolled
           ? "py-4 bg-background/80 backdrop-blur-md border-b border-white/5"
@@ -46,22 +54,22 @@ export function Header() {
 
         {/* Desktop Nav - Only from XL breakpoint to prevent overlap with the long name */}
         <nav className="hidden xl:flex items-center gap-8 2xl:gap-12">
-          {["About", "Works", "Skills", "Contact"].map((item, index) => (
+          {NAV_ITEMS.map((item, index) => (
             <motion.div
-              key={item}
+              key={item.label}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                delay: 3 + index * 0.1,
+                delay: 2.4 + index * 0.08,
                 duration: 0.5,
                 ease: "easeOut",
               }}
             >
               <Link
-                href={`#${item.toLowerCase()}`}
+                href={item.href}
                 className="relative text-xs font-space uppercase tracking-widest text-foreground/60 hover:text-foreground transition-colors group"
               >
-                {item}
+                {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-amber-6 transition-all duration-300 group-hover:w-full" />
               </Link>
             </motion.div>
@@ -72,6 +80,8 @@ export function Header() {
         <button
           className="xl:hidden relative text-foreground p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMobileMenuOpen}
         >
           {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
         </button>
@@ -87,19 +97,19 @@ export function Header() {
             transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
             className="fixed inset-0 w-screen h-screen bg-[#151410] z-[90] flex flex-col items-center justify-center gap-10 xl:hidden"
           >
-            {["About", "Works", "Skills", "Contact"].map((item, index) => (
+            {NAV_ITEMS.map((item, index) => (
               <motion.div
-                key={item}
+                key={item.label}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 + index * 0.1 }}
               >
                 <Link
-                  href={`#${item.toLowerCase()}`}
-                  className="text-5xl font-syne font-black uppercase text-foreground/90 hover:text-amber-6 transition-colors tracking-tight"
+                  href={item.href}
+                  className="text-4xl sm:text-5xl font-syne font-black uppercase text-foreground/90 hover:text-amber-6 transition-colors tracking-tight"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {item}
+                  {item.label}
                 </Link>
               </motion.div>
             ))}

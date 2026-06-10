@@ -16,7 +16,7 @@ export function Preloader() {
       history.scrollRestoration = "manual";
     }
 
-    const duration = 2000; // 2 seconds loading
+    const duration = 1200; // fast count-up, recruiters don't wait
     const steps = 100;
     const intervalTime = duration / steps;
 

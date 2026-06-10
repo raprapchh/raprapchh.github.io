@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Syne, Unbounded, Space_Grotesk, Inter } from "next/font/google"; // Fonts requested
 import "./globals.css";
 import { SmoothScroll } from "@/components/smooth-scroll";
@@ -27,10 +27,45 @@ const inter = Inter({
   display: "swap",
 });
 
+const SITE_DESCRIPTION =
+  "Fullstack developer & Epitech student based in Paris. Currently full-time intern at Phocus1, building internal platforms and AI automation workflows with n8n. React, Next.js, Go, Docker, PostgreSQL.";
+
 export const metadata: Metadata = {
-  title: "Raphaël Chanliongco | Portfolio",
-  description:
-    "Portfolio of Raphaël Chanliongco, Fullstack Developer & Epitech Student.",
+  metadataBase: new URL("https://raprapchh.github.io"),
+  title: "Raphaël Chanliongco — Fullstack Developer",
+  description: SITE_DESCRIPTION,
+  keywords: [
+    "Raphaël Chanliongco",
+    "Fullstack Developer",
+    "Epitech",
+    "Paris",
+    "React",
+    "Next.js",
+    "Go",
+    "n8n",
+    "Automation",
+    "Portfolio",
+  ],
+  openGraph: {
+    title: "Raphaël Chanliongco — Fullstack Developer",
+    description: SITE_DESCRIPTION,
+    url: "https://raprapchh.github.io",
+    siteName: "Raphaël Chanliongco",
+    type: "website",
+    images: [{ url: "/assets/Photo.png", width: 1200, height: 1200 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Raphaël Chanliongco — Fullstack Developer",
+    description: SITE_DESCRIPTION,
+    images: ["/assets/Photo.png"],
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#151410",
 };
 
 export default function RootLayout({

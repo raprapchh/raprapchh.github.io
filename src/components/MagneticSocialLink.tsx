@@ -6,10 +6,15 @@ import React from "react";
 
 interface MagneticSocialLinkProps {
   href: string;
+  label: string;
   children: React.ReactNode;
 }
 
-const MagneticSocialLink = ({ href, children }: MagneticSocialLinkProps) => {
+const MagneticSocialLink = ({
+  href,
+  label,
+  children,
+}: MagneticSocialLinkProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   // Track if we are hovering the *actual* button for the fill effect
@@ -56,6 +61,7 @@ const MagneticSocialLink = ({ href, children }: MagneticSocialLinkProps) => {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label={label}
         style={{ x: springX, y: springY }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}

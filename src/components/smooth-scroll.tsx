@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
+import { MotionConfig } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
@@ -30,7 +31,7 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
         touchMultiplier: 2,
       }}
     >
-      {children as any}
+      <MotionConfig reducedMotion="user">{children}</MotionConfig>
     </ReactLenis>
   );
 }

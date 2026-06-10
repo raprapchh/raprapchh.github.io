@@ -137,8 +137,9 @@ const AboutSection = () => {
               {/* Refined Paragraph */}
               <p className="text-sm sm:text-base md:text-lg font-space text-[#E7E7E7]/60 leading-relaxed max-w-2xl">
                 I find satisfaction in a job well done. Whether it&apos;s
-                backend logic or frontend details, I am committed to delivering
-                clean, reliable, and high-quality code every single time.
+                backend logic, frontend details, or automation pipelines, I am
+                committed to delivering clean, reliable, and high-quality code
+                every single time.
               </p>
             </motion.div>
 
@@ -162,7 +163,11 @@ const AboutSection = () => {
                   value="Epitech — Master's (Year 3/5)"
                 />
                 <SpecItem label="Age" value="21 y/o" />
-                <SpecItem label="Stack" value="Full-Stack / Creative Dev" />
+                <SpecItem
+                  label="Currently"
+                  value="Fullstack Intern @ Phocus1"
+                />
+                <SpecItem label="Focus" value="Full-Stack & n8n Automation" />
               </div>
             </motion.div>
 
