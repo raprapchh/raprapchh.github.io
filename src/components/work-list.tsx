@@ -192,7 +192,7 @@ export function WorkList() {
     <section className="w-full py-24 md:py-32 px-6 md:px-12 bg-background relative z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <TypewriterText
-          text="Experience"
+          text="Experiences"
           className="text-4xl md:text-5xl lg:text-6xl font-syne font-bold uppercase text-[#E7E7E7]"
           replay={true}
         />
