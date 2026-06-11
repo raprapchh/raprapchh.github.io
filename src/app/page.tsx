@@ -9,7 +9,7 @@ import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full relative bg-background text-foreground overflow-x-hidden">
+    <main className="min-h-screen w-full relative bg-background text-foreground overflow-x-clip">
       <Preloader />
       <Header />
 
