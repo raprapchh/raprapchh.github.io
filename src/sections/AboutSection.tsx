@@ -28,30 +28,6 @@ const blockVariants: Variants = {
   },
 };
 
-/* Animated border that draws itself (horizontal) */
-const borderHVariants: Variants = {
-  hidden: { scaleX: 0 },
-  visible: {
-    scaleX: 1,
-    transition: {
-      duration: 1.0,
-      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
-    },
-  },
-};
-
-/* Animated border that draws itself (vertical) */
-const borderVVariants: Variants = {
-  hidden: { scaleY: 0 },
-  visible: {
-    scaleY: 1,
-    transition: {
-      duration: 1.0,
-      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
-    },
-  },
-};
-
 /* ─── Spec Item Component ─── */
 const SpecItem = ({ label, value }: { label: string; value: string }) => (
   <div className="flex justify-between items-baseline py-4 border-b border-white/5 last:border-b-0">

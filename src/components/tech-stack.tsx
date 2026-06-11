@@ -49,29 +49,16 @@ const TechItem = ({
     );
   }
 
-  // Transparent items (Outline -> Solid)
+  // Transparent items: outlined glyphs, stroke only
   return (
-    <motion.span
+    <span
       className="text-6xl md:text-8xl font-syne font-bold uppercase cursor-default text-transparent"
       style={{
         WebkitTextStroke: "1px #E7E7E7",
       }}
-      initial="outline"
-      // whileHover="solid" removed to keep it always transparent
-      variants={{
-        outline: {
-          color: "transparent",
-          WebkitTextStroke: "1px #E7E7E7",
-        } as any,
-        solid: {
-          color: "#E7E7E7",
-          WebkitTextStroke: "0px transparent", // Optional: remove stroke or keep it
-        } as any,
-      }}
-      transition={{ duration: 0.3 }}
     >
       {text}
-    </motion.span>
+    </span>
   );
 };
 

@@ -22,20 +22,26 @@ export const TypewriterText = ({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: !replay, amount: 0.5 });
 
-  useEffect(() => {
-    if (isInView) {
-      let i = 0;
-      const intervalId = setInterval(() => {
-        setDisplayedText(text.substring(0, i));
-        i++;
-        if (i > text.length) clearInterval(intervalId);
-      }, 20);
+  // Reset while leaving the viewport, via the "adjust state during render"
+  // pattern (https://react.dev/learn/you-might-not-need-an-effect)
+  const [wasInView, setWasInView] = useState(isInView);
+  if (wasInView !== isInView) {
+    setWasInView(isInView);
+    if (!isInView && replay) setDisplayedText("");
+  }
 
-      return () => clearInterval(intervalId);
-    } else if (replay) {
-      setDisplayedText("");
-    }
-  }, [isInView, text, replay]);
+  useEffect(() => {
+    if (!isInView) return;
+
+    let i = 0;
+    const intervalId = setInterval(() => {
+      setDisplayedText(text.substring(0, i));
+      i++;
+      if (i > text.length) clearInterval(intervalId);
+    }, 20);
+
+    return () => clearInterval(intervalId);
+  }, [isInView, text]);
 
   return (
     <div ref={ref} className={`inline-block ${className}`}>
@@ -44,7 +50,7 @@ export const TypewriterText = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: [0, 1, 0] }}
         transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
-        className="ml-1 inline-block"
+        className={`ml-1 inline-block ${cursorClassName}`}
         style={{ color: cursorColor }}
       >
         |

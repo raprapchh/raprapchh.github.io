@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, Download } from "lucide-react";
 import Link from "next/link";
 import MagneticSocialLink from "@/components/MagneticSocialLink";
@@ -14,7 +13,7 @@ export function Footer() {
     >
       <div className="flex flex-col items-center text-center">
         <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-[10.8vw] font-syne font-bold leading-[0.9] tracking-tighter uppercase mb-16">
-          Let's Work <br /> Together
+          Let&apos;s Work <br /> Together
         </h2>
 
         <Link

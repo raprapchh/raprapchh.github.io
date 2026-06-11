@@ -10,7 +10,7 @@ export function About() {
     >
       {/* 1. L'INTRO DISCRÈTE (Label) */}
       <span className="font-space text-sm md:text-base opacity-60 mb-6 tracking-widest uppercase">
-        I'm Raphaël —
+        I&apos;m Raphaël —
       </span>
 
       {/* 2. LE MESSAGE IMPACTANT (Headline) */}

@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { TypewriterText } from "@/components/ui/typewriter-text";
 
 const NAV_ITEMS = [
   { label: "About", href: "#about" },
