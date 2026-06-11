@@ -1,6 +1,6 @@
 "use client";
 
-import { useLenis } from "@studio-freight/react-lenis";
+import { useLenis } from "lenis/react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useRef, MouseEvent, useState } from "react";
 import { ArrowUp } from "lucide-react";
