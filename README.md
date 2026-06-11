@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+<br />
 
-First, run the development server:
+# RAPHAËL CHANLIONGCO
+
+### Full-Stack Developer — creative frontend, robust engineering.
+
+<br />
+
+**[✦ &nbsp;ENTER THE SITE — raprapchh.github.io&nbsp; ✦](https://raprapchh.github.io)**
+
+<br />
+
+[![Deploy](https://github.com/raprapchh/raprapchh.github.io/actions/workflows/nextjs.yml/badge.svg)](https://github.com/raprapchh/raprapchh.github.io/actions/workflows/nextjs.yml)
+
+![Next.js](https://img.shields.io/badge/Next.js_16-151410?style=for-the-badge&logo=nextdotjs&logoColor=F3D673)
+![React](https://img.shields.io/badge/React_19-151410?style=for-the-badge&logo=react&logoColor=F3D673)
+![TypeScript](https://img.shields.io/badge/TypeScript-151410?style=for-the-badge&logo=typescript&logoColor=F3D673)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_4-151410?style=for-the-badge&logo=tailwindcss&logoColor=F3D673)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-151410?style=for-the-badge&logo=framer&logoColor=F3D673)
+![Lenis](https://img.shields.io/badge/Lenis_Scroll-151410?style=for-the-badge&logoColor=F3D673)
+
+<br />
+
+*A dark, motion-driven portfolio. Built to be scrolled, not skimmed.*
+
+</div>
+
+<br />
+
+---
+
+## ✦ The Experience
+
+Every pixel is choreographed. This isn't a template — it's a scene.
+
+- **Cinematic preloader** — the site doesn't load, it opens.
+- **Inertia smooth-scrolling** powered by Lenis. The page glides.
+- **Scroll-choreographed reveals** — experience cards rise, de-blur and unmask line by line, one at a time, as you scroll. Nothing is shown before its moment.
+- **Cursor-tracking spotlight** — cards light up under your mouse with a warm amber radial glow.
+- **Magnetic buttons** & spring-physics micro-interactions on every touchpoint.
+- **Typewriter headlines** that type themselves back in on every pass.
+- **Outlined marquee skill wall** — stroke-only typography in infinite drift.
+- **Accessible by default** — `prefers-reduced-motion` is honored globally.
+
+## ✦ Stack
+
+| Layer | Choice |
+| :-- | :-- |
+| Framework | **Next.js 16** (App Router, static export) |
+| UI | **React 19** + **TypeScript 5** |
+| Styling | **Tailwind CSS 4** + SCSS |
+| Motion | **Framer Motion 12** |
+| Scroll | **Lenis** |
+| Icons | **Lucide** |
+| Hosting | **GitHub Pages** — zero servers, 100% static |
+
+## ✦ Run It Locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/raprapchh/raprapchh.github.io.git
+cd raprapchh.github.io
+npm install
+npm run dev        # → http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+npm run build      # production build (static export)
+npm run lint       # eslint, zero warnings tolerated
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✦ Anatomy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/            # App Router pages & global styles
+├── components/     # hero, work-list, footer, preloader, magnetic UI…
+├── sections/       # full-page composed sections
+└── lib/            # utilities
+```
 
-## Learn More
+## ✦ Ship It
 
-To learn more about Next.js, take a look at the following resources:
+Push to `main` → GitHub Actions builds the static export → deployed to GitHub Pages. No manual steps, ever.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<br />
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+<div align="center">
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Let's work together.**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[Website](https://raprapchh.github.io) · [LinkedIn](https://www.linkedin.com/in/raphael-chanliongco) · [GitHub](https://github.com/raprapchh) · [Email](mailto:raph.chanliongco@outlook.com)
+
+<sub>© Raphaël Chanliongco — designed & built from scratch.</sub>
+
+</div>
