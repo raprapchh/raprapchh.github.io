@@ -56,6 +56,7 @@ export function Hero() {
 
       <div className="z-10 flex flex-col items-center">
         <motion.div
+          suppressHydrationWarning
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2.2, duration: 0.6 }}
@@ -72,6 +73,7 @@ export function Hero() {
         </motion.div>
 
         <motion.h1
+          suppressHydrationWarning
           style={{ y: y1 }}
           className="text-[9vw] md:text-[7.2vw] font-syne font-bold leading-[0.8] tracking-tighter uppercase text-center mix-blend-difference"
         >
@@ -88,6 +90,7 @@ export function Hero() {
         </motion.h1>
 
         <motion.p
+          suppressHydrationWarning
           style={{ y: y2, opacity }}
           className="mt-8 md:mt-12 font-space text-sm md:text-base uppercase tracking-widest opacity-60 text-center"
         >
@@ -95,6 +98,7 @@ export function Hero() {
         </motion.p>
 
         <motion.div
+          suppressHydrationWarning
           style={{ y: y2, opacity }}
           className="flex gap-6 mt-8 z-20 mix-blend-difference"
         >
@@ -126,6 +130,7 @@ export function Hero() {
       </div>
 
       <motion.div
+        suppressHydrationWarning
         style={{ opacity }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 mix-blend-difference"
       >
